@@ -6,4 +6,15 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="NServiceBus.Extensions.Hosting" Version="3.0.1" />
+      <PackageReference Include="NServiceBus.Newtonsoft.Json" Version="4.1.0" />
+      <PackageReference Include="NServiceBus.SqlServer" Version="7.0.10" />
+      <PackageReference Include="NServiceBus.Transports.Kafka" Version="0.8.5" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DS.Shared.Events\DS.Shared.Events.csproj" />
+    </ItemGroup>
+
 </Project>

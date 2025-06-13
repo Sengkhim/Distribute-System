@@ -1,19 +1,19 @@
 ﻿namespace DS.Shared.Events;
 
 // Commands (tell a service to do something)
-public record OrderItemResponse(Guid ProductId, int Quantity, decimal UnitPrice);
-public record PlaceOrderCommand(Guid OrderId, Guid UserId, IEnumerable<OrderItemResponse> Items);
-public record ReserveInventoryCommand(Guid OrderId, Guid ProductId, int Quantity);
-public record ReleaseInventoryCommand(Guid OrderId, Guid ProductId, int Quantity);
-public record ProcessPaymentCommand(Guid OrderId, decimal Amount, Guid UserId);
-public record ConfirmOrderCommand(Guid OrderId);
-public record CancelOrderCommand(Guid OrderId);
+public record OrderItemResponse(string ProductId, int Quantity, decimal UnitPrice);
+public record PlaceOrderCommand(string OrderId, string UserId, IEnumerable<OrderItemResponse> Items);
+public record ReserveInventoryCommand(string OrderId, string ProductId, int Quantity);
+public record ReleaseInventoryCommand(string OrderId, string ProductId, int Quantity);
+public record ProcessPaymentCommand(string OrderId, decimal Amount, string UserId);
+public record ConfirmOrderCommand(string OrderId);
+public record CancelOrderCommand(string OrderId);
 
 // Events (a service has done something, or something has happened)
-public record OrderCreatedEvent(Guid OrderId, Guid UserId, decimal TotalAmount, DateTime CreatedAt);
-public record InventoryReservedEvent(Guid OrderId, Guid ProductId, int Quantity);
-public record InventoryReservationFailedEvent(Guid OrderId, Guid ProductId, int RequestedQuantity, string Reason);
-public record PaymentProcessedEvent(Guid OrderId, decimal Amount, Guid UserId, string TransactionId);
-public record PaymentFailedEvent(Guid OrderId, decimal Amount, Guid UserId, string Reason);
-public record OrderConfirmedEvent(Guid OrderId);
-public record OrderCancelledEvent(Guid OrderId,  string Reason);
+public record OrderCreatedEvent(string OrderId, string UserId, decimal TotalAmount, DateTimeOffset CreatedAt);
+public record InventoryReservedEvent(string OrderId, string ProductId, int Quantity);
+public record InventoryReservationFailedEvent(string OrderId, string ProductId, int RequestedQuantity, string Reason);
+public record PaymentProcessedEvent(string OrderId, decimal Amount, string UserId, string TransactionId);
+public record PaymentFailedEvent(string OrderId, decimal Amount, string UserId, string Reason);
+public record OrderConfirmedEvent(string OrderId);
+public record OrderCancelledEvent(string OrderId,  string Reason);

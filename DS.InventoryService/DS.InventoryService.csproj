@@ -7,19 +7,33 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Confluent.Kafka" Version="2.10.1" />
+        <PackageReference Include="MediatR" Version="12.5.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.17" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.17">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.17" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.17">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2"/>
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Application\Businesslogic\" />
-      <Folder Include="Application\Handlers\" />
       <Folder Include="Controllers\" />
       <Folder Include="Domain\Aggregates\" />
-      <Folder Include="Domain\Entities\" />
+      <Folder Include="Domain\Configuration\" />
       <Folder Include="Domain\Events\" />
-      <Folder Include="Infrastructure\EFCoreDbContext\" />
       <Folder Include="Infrastructure\Kafka\" />
       <Folder Include="Infrastructure\Migrations\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DS.Shared.Events\DS.Shared.Events.csproj" />
     </ItemGroup>
 
 </Project>
