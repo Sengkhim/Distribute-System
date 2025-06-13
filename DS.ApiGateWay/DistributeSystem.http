@@ -1,0 +1,6 @@
+@DistributeSystem_HostAddress = http://localhost:5088
+
+GET {{DistributeSystem_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
