@@ -10,5 +10,5 @@ public class OrderItems
     public decimal Price { get; set; }
     public decimal Subtotal { get; set; }
     public string ProductSnapshot { get; set; } = string.Empty;
-    public Orders Orders { get; set; }
+    public Orders? Orders { get; set; }
 }
